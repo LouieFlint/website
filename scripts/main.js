@@ -7,7 +7,6 @@ function initialiseDoc() {
 }
 
 function getCurrentYear() {
-    console.log(new Date().getFullYear())
     $("#currentYear").html(new Date().getFullYear());
 }
 
@@ -31,25 +30,29 @@ function createCommandElement(text) {
 }
 
 function createResponseElement(inputText) {
-    var jsonHost = "https://jsonkeeper.com/b/TNDI";
+    var jsonHost = "https://raw.githubusercontent.com/LouieFlint/website/master/content/commands.json";
     $.getJSON(jsonHost, function(data){
-        $.each(data, function(key, val) {
-            if (key == inputText) {
-                if (val.text) {
-                    $.each(val.text, function(value) {
-                        $("#content").append("<span class='cmdHistory'>" + value);
+        var match = false;
+        $.each(data, function(i, elem) {
+            console.log(data);
+            if (i == inputText) {
+                if (elem.text) {
+                    $.each(elem.text, function(index, value) {
+                        $("#content").append("<span class='cmdHistory'>" + value + "</span><br>");
                     });
-                }
-                if (val.action) {
-                    switch (val.action) {
-                        case 'redirect': 
-                            window.open('val.action.content', '_blank');
+               }
+               if (elem.action) {
+                    switch (elem.action.type) {
+                        case 'redirect':
+                            setTimeout(window.open(url, '_blank'), 5000);                            
                     }
                 }
-            } else {
-                $("#content").append("<span>'" + text + "' is not recognized as an internal or external command.</span><br><span>Try -help for a list of commands.</span><br><br>");
+                match = true;
             }
         });
+        if (!match) {
+            $("#content").append("<span>'" + inputText + "' is not recognized as an internal or external command.</span><br><span>Try -help for a list of commands.</span><br><br>");
+        }
     });
     
 }
