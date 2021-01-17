@@ -34,7 +34,6 @@ function createResponseElement(inputText) {
     $.getJSON(jsonHost, function(data){
         var match = false;
         $.each(data, function(i, elem) {
-            console.log(data);
             if (i == inputText) {
                 if (elem.text) {
                     $.each(elem.text, function(index, value) {
@@ -44,7 +43,7 @@ function createResponseElement(inputText) {
                if (elem.action) {
                     switch (elem.action.type) {
                         case 'redirect':
-                            setTimeout(window.open(url, '_blank'), 5000);                            
+                            window.open(elem.action.content, '_blank');                            
                     }
                 }
                 match = true;
