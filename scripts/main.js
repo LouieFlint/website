@@ -44,7 +44,7 @@ function createResponseElement(inputText) {
                if (elem.action) {
                     switch (elem.action.type) {
                         case 'redirect':
-                            setTimeout(window.open(url, '_blank'), 5000);                            
+                            setTimeout(window.open(elem.action.content, '_blank'), 5000);                            
                     }
                 }
                 match = true;
