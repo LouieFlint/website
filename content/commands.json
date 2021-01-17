@@ -1,0 +1,22 @@
+{
+    "help": {
+        "text" : [
+            "Help menu",
+            "----------------------------------------------------------",
+            "linkedin - opens LinkedIn profile",
+            "twitter- opens twitter profile",
+            "linkedin - opens LinkedIn profile",
+            "----------------------------------------------------------",
+            "more commands coming soon..."
+        ]
+    },
+     "linkedin": {
+         "text" : [
+             "Opening <a href='https://www.linkedin.com/in/louieflint/'>https://www.linkedin.com/in/louieflint/</a>...'"
+         ],
+        "action": {
+            "type" : "redirect",
+            "content" : "https://www.linkedin.com/in/louieflint/"
+      }
+    }
+}
