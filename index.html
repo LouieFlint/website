@@ -1,8 +1,27 @@
 <html>
-  <title>Louie Flint</title>
+  <head>
+    <title>Louie Flint</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script>$(document).ready(function () {initialiseDoc();});</script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
   <body>
-    <h1>Coming soon</h1>
-    <p>Check out my Twitter for now...</p>
-    <a class="twitter-timeline" href="https://twitter.com/Louie_Flint?ref_src=twsrc%5Etfw">Tweets by Louie_Flint</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <div id="intro">
+      <span>louieflint.com [Version 1.0.0117]</span><br>
+      <span>(c) <span id="currentYear"></span> Louie Flint. All rights reserved.</span>
+      <br><br>
+    </div>
+    <div id="main">
+      <div id="content"></div>
+      <div class="inputBlock">
+          <span id="userText">C:\Users\You></span>
+          <div id="inputArea">
+            <input type="text" id="consoleInput">
+          </div>
+      </div>
+    </div>
   </body>
+  <footer>
+  </footer>
 </html>
