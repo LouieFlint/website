@@ -1,0 +1,56 @@
+@import  url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+body {
+    background-color: #2d0922;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+header {
+    background-color: rgb(48, 34, 34);
+    color: rgb(196, 196, 196);
+    padding: 13px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14;
+}
+
+.dropdown {
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dropdown-content {
+    background-color: rgb(48, 34, 34);
+    color: rgb(196, 196, 196);
+}
+
+main {
+    color: #89e234;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+a {
+    color: white;
+}
+
+.white, .history, .hintText {
+    color: white;
+    font-weight: 500;
+}
+
+.blue {
+    color: #6F9CCD;
+}
+
+#consoleInput {
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    font-family: 'Ubuntu Mono', monospace;
+}
