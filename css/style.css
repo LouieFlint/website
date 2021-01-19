@@ -3,10 +3,6 @@ body {
     margin: 0;
 }
 
-header {
-    background-color: chartreuse;
-}
-
 .dropdown {
     position: relative;
     display: inline-block;
