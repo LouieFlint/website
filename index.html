@@ -5,23 +5,32 @@
     <script src="scripts/main.js"></script>
     <script>$(document).ready(function () {initialiseDoc();});</script>
     <link rel="stylesheet" href="css/style.css">
+    <link id="theme" rel="stylesheet" href="css/theme-windows.css">
   </head>
   <body>
-    <div id="intro">
-      <span>louieflint.com [Version 1.0.0117]</span><br>
-      <span>(c) <span id="currentYear"></span> Louie Flint. All rights reserved.</span>
-      <br><br>
-    </div>
-    <div id="main">
+    <header>
+      <div class="dropdown">
+        <span id="main-title">louieflint.com CMD.exe</span>
+        <div class="dropdown-content">
+          <div class="theme-item windows" onclick><span>Windows</span></div>
+          <div class="theme-item ubuntu" onclick><span>Ubuntu</span></div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div id="intro">
+        <span>louieflint.com [Version 1.0.0117]</span><br>
+        <span>(c) <span id="currentYear"></span> Louie Flint. All rights reserved.</span>
+        <br><br>
+      </div>
       <div id="content"></div>
       <div class="inputBlock">
-          <span id="userText">C:\Users\You></span>
+          <span id="userText"></span>
           <div id="inputArea">
-            <input type="text" id="consoleInput">
+            <input type="text" id="consoleInput" spellcheck="false">
           </div>
       </div>
-    </div>
+    </main>
+    <footer></footer>
   </body>
-  <footer>
-  </footer>
 </html>
