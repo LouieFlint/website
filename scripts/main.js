@@ -41,11 +41,11 @@ var historylength = 0;
 var historyPos;
 var lastTyped;
 function inputListeners() {
-    //sanitize input
-    var input = $('#consoleInput').val().replace(/(<([^>]+)>)/ig,"");;
+    var input = $('#consoleInput');
     input.keyup(function(event) {
         if (event.keyCode == 13) {
-            var text = $('#consoleInput').val();
+            //sanitize input
+            var text = $('#consoleInput').val().replace(/(<([^>]+)>)/ig,"");
             createCommandElement(text, theme);
             if (text.replace(/\s/g, "").length > 0) {
                 createResponseElement(text);
@@ -57,7 +57,7 @@ function inputListeners() {
         }
         if (event.keyCode == 38) {
             if (historyPos == historylength) {
-                lastTyped = $('#consoleInput').val();
+                lastTyped = $('#consoleInput').val().replace(/(<([^>]+)>)/ig,"");
             }
             if (historyPos && historyPos > 0) {
                 historyPos--;
