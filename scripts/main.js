@@ -41,7 +41,8 @@ var historylength = 0;
 var historyPos;
 var lastTyped;
 function inputListeners() {
-    var input = $('#consoleInput');
+    //sanitize input
+    var input = $('#consoleInput').val().replace(/(<([^>]+)>)/ig,"");;
     input.keyup(function(event) {
         if (event.keyCode == 13) {
             var text = $('#consoleInput').val();
