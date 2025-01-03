@@ -1,5 +1,5 @@
 function initialiseDoc() {
-  onsole.log('hit');
+  console.log('hit');
   const xhr = new XMLHttpRequest();
   const url = "https://api.github.com/repos/louieflint/website/gifs/src/"
   xhr.open('GET', URL, true);
