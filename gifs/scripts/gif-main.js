@@ -8,5 +8,5 @@ async function initialiseDoc() {
     var gif = i.path[i].split('gifs/');
     console.log(gif);
     $("#gif").append("<img src='./" + gif + "'/>");
-  }
+  });
 }
