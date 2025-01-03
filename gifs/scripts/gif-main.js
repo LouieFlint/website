@@ -16,7 +16,7 @@ async function getGifDir() {
 
 async function createElements() {
   await $.each(allGifs, function(i) {
-      var gif = allGifs[i].path.split('gifs/');
+      var gif = allGifs[i].path.split('gifs/')[1];
       console.log(gif);
       $("#gif").append("<img src='./" + gif + "'/>");
   });
