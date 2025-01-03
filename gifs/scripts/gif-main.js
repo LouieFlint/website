@@ -15,12 +15,16 @@ async function getGifDir() {
 
 async function createElements() {
   var colEnd = 0
-  await $.each(allGifs, function(i) {
+  var i;
+  for (i = 0; i < allGifs.length;) {
+      console.log("before:"+i);
       var gif1 = allGifs[i].path.split('gifs/')[1];
       var gif2 = allGifs[i+1].path.split('gifs/')[1];
       var gif3 = allGifs[i+2].path.split('gifs/')[1];
       console.log("before:"+i);
-      $("#gif").append("<div class='column'><div class='photo'><img src='./" + gif1 + "'/></div><div class='photo'><img src='./" + gif2 + "'/></div><div class='photo'><img src='./" + gif3 + "'/></div></div>");
+      $("#col1").append("<div class='photo'><img src='./" + gif1 + "'/></div>");
+      $("#col2").append("<div class='photo'><img src='./" + gif2 + "'/></div>");
+      $("#col3").append("<div class='photo'><img src='./" + gif3 + "'/></div>");
       i = i + 3;
       console.log("after:"+i);
   });
