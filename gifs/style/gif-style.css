@@ -1,7 +1,7 @@
 /*.gallery {
-  --s: 150px; /* control the size */
-  --g: 10px;  /* control the gap */
-  --f: 1.5;   /* control the scale factor */
+  --s: 150px; control the size
+  --g: 10px;  control the gap
+  --f: 1.5;   control the scale factor
   
   display: grid;
   gap: var(--g);
