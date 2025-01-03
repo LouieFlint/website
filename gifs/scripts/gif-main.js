@@ -11,13 +11,11 @@ function initialiseDoc() {
 async function getGifDir() {
   const response = await fetch("https://api.github.com/repos/LouieFlint/website/contents/gifs/src/");
   allGifs = await response.json();
-  console.log(allGifs)
 }
 
 async function createElements() {
   await $.each(allGifs, function(i) {
       var gif = allGifs[i].path.split('gifs/')[1];
-      console.log(gif);
       $("#gif").append("<img src='./" + gif + "'/>");
   });
 }
