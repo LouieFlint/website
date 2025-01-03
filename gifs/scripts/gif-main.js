@@ -1,5 +1,10 @@
+const allGifs = [] 
+
 async function initialiseDoc() {
   const response = await fetch("https://api.github.com/repos/LouieFlint/website/contents/gifs/src/");
-  const todos = await response.json();
-  console.log(todos);
+  allGifs = await response.json();
+  $.each(allGifs, function(i) {
+    var gif = i.path[i].split('gifs/');
+    console.log(gif);
+    $("#gif").append("<img src='./" + gif + "'/>");
 }
