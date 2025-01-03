@@ -1,4 +1,4 @@
-const allGifs = [] 
+var allGifs = [] 
 
 function initialiseDoc() {
   return new Promise(async(resolve, reject)=> {
