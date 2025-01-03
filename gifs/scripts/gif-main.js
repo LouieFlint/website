@@ -1,13 +1,13 @@
 const allGifs = [] 
 
 async function initialiseDoc() {
-  getGifDir().then{
+  getGifDir().then(
     $.each(allGifs, function(i) {
       var gif = i.path[i].split('gifs/');
       console.log(gif);
       $("#gif").append("<img src='./" + gif + "'/>");
     });
-  }
+  )
 }
 
 function getGifDir() {
