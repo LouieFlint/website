@@ -14,7 +14,6 @@ async function getGifDir() {
 }
 
 async function createElements() {
-  var colEnd = 0
   var i;
   for (i = 0; i < allGifs.length;) {
       console.log("before:"+i);
