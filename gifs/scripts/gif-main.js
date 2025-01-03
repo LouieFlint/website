@@ -27,5 +27,5 @@ async function createElements() {
       $("#col3").append("<div class='photo'><img src='./" + gif3 + "'/></div>");
       i = i + 3;
       console.log("after:"+i);
-  });
+  };
 }
