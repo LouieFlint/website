@@ -18,7 +18,7 @@ async function createElements() {
       var gif = allGifs[i].path.split('gifs/')[1];
       if (i % 3) {
         console.log(i);
-         $("#gif").append(</div><div class='column'>);
+         $("#gif").append("</div><div class='column'>");
       }
       $("#gif").append("<div class='photo'><img src='./" + gif + "'/></div>");
       
