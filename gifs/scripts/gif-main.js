@@ -14,13 +14,17 @@ async function getGifDir() {
 }
 
 async function createElements() {
+  var colEnd = 0
   await $.each(allGifs, function(i) {
       var gif = allGifs[i].path.split('gifs/')[1];
       if (!(i % 3)) {
         console.log(i);
-         $("#gif").append("</div><div class='column'>");
+        $("#gif").append("<div class='column'>");
+        colEnd = i + 3;
       }
       $("#gif").append("<div class='photo'><img src='./" + gif + "'/></div>");
-      
+      if (i == colEnd) {
+        $("#gif").append("</div>");
+      }
   });
 }
