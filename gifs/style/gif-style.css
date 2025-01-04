@@ -1,0 +1,34 @@
+body {
+  max-width: 1224px;
+  wodth: 95%;
+  margin: auto;
+  padding: 40px 0;
+}
+
+#randomBtn {
+  margin-bottom: 2rem;
+}
+
+.gallery {
+  display: flex;
+  gap: 20px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+@media(max-width: 768px) {
+  .gallery{
+    flex-direction: column;
+  }
+}

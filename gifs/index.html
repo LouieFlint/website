@@ -2,13 +2,16 @@
   <head>
     <title>Louie Flint</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="scripts/gif-main.js"></script>
+    <script src="./scripts/gif-main.js"></script>
     <script>$(document).ready(function () {initialiseDoc();});</script>
+    <link rel="stylesheet" href="./style/gif-style.css">
   </head>
   <body>
     <div id="randomBtn"><span>Random Gif</span></div>
-    <div id="gif">
-      <img src="/src/the-simpsons-homer-simpson.gif"/>
+    <div id="gif" class="gallery">
+      <div id="col1" class="column"></div>
+      <div id="col2" class="column"></div>
+      <div id="col3" class="column"></div>
     </div>
   </body>
 </html>
