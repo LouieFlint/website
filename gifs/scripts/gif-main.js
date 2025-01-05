@@ -15,12 +15,12 @@ async function getGifDir() {
 }
 
 async function createElements() {
-  let i;
+  var i;
   for (i = 0; i < allGifs.length;) {
       console.log("before:"+i);
-      let gif1 = allGifs[i].path.split('gifs/')[1];
-      let gif2 = allGifs[i+1].path.split('gifs/')[1];
-      let gif3 = allGifs[i+2].path.split('gifs/')[1];
+      var gif1 = allGifs[i].path.split('gifs/')[1];
+      var gif2 = allGifs[i+1].path.split('gifs/')[1];
+      var gif3 = allGifs[i+2].path.split('gifs/')[1];
       console.log("before:"+i);
       $("#col1").append("<div class='photo'><img src='./" + gif1 + "'/></div>");
       $("#col2").append("<div class='photo'><img src='./" + gif2 + "'/></div>");
@@ -31,7 +31,7 @@ async function createElements() {
 }
 
 function openRandomGif() {
-  let x = Math.random() * allGifs.length;
-  let url = allGifs[x].download_url;
+  var x = Math.random() * allGifs.length;
+  var url = allGifs[x].download_url;
   window.open(url, '_blank').focus();
 }
