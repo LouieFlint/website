@@ -17,21 +17,20 @@ async function getGifDir() {
 async function createElements() {
   var i;
   for (i = 0; i < allGifs.length;) {
-      console.log("before:"+i);
       var gif1 = allGifs[i].path.split('gifs/')[1];
       var gif2 = allGifs[i+1].path.split('gifs/')[1];
       var gif3 = allGifs[i+2].path.split('gifs/')[1];
-      console.log("before:"+i);
       $("#col1").append("<div class='photo'><img src='./" + gif1 + "'/></div>");
       $("#col2").append("<div class='photo'><img src='./" + gif2 + "'/></div>");
       $("#col3").append("<div class='photo'><img src='./" + gif3 + "'/></div>");
       i = i + 3;
-      console.log("after:"+i);
   };
 }
 
 function openRandomGif() {
   var x = Math.random() * allGifs.length;
+  console.log(x);
   var url = allGifs[x].download_url;
+  console.log(url);
   window.open(url, '_blank').focus();
 }
