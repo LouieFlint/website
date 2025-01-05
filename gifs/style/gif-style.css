@@ -3,6 +3,7 @@ body {
   wodth: 95%;
   margin: auto;
   padding: 40px 10px;
+  background-color: #c6eaff;
 }
 
 #randomBtn {
@@ -16,7 +17,7 @@ body {
     font-size: 25px;
     width: 8em;
     height: 2em;
-    color: orange;
+    color: #ffe65b;
     border-left: 0.08em solid;
     position: relative;
     margin-top: 0.8em;
