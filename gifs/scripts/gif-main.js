@@ -17,9 +17,9 @@ async function getGifDir() {
 async function createElements() {
   var i;
   for (i = 0; i < allGifs.length;) {
-      var gif1 = allGifs[i].path.split('gifs/')[1];
-      var gif2 = allGifs[i+1].path.split('gifs/')[1];
-      var gif3 = allGifs[i+2].path.split('gifs/')[1];
+      var gif1 = allGifs[i].name;
+      var gif2 = allGifs[i+1].name;
+      var gif3 = allGifs[i+2].name;
       $("#col1").append(photoClass(gif1));
       $("#col2").append(photoClass(gif2));
       $("#col3").append(photoClass(gif3));
@@ -28,7 +28,8 @@ async function createElements() {
 }
 
 function photoClass(gif) {
-  return "<div class='photo'><img src='./" + gif + "'/><div class='overlay' onClick='copyImage(./" + gif + ")'><img src='./icons/copy.png'/></div></div>"
+  let name = gif.
+  return "<div class='photo'><img src='./src/" + gif + "'/><div class='overlay' onClick='copyImage(" + gif + ")'><img src='./icons/copy.png'/></div></div>"
 }
 
 function randomURL() {
@@ -42,6 +43,21 @@ const img = new Image();
 const canvas = document.createElement('canvas');
 const ctx = canvas.getContext('2d');
 
+async function copyImage(name) {
+  const src = "./src/" + name;
+  const image = await writeToCanvas(src);
+  try {
+    await navigator.clipboard.write([
+      new ClipboardItem({
+        [image.type]: image,
+      })
+    ]);
+    console.log("Success");
+  } catch(e) {
+    console.log("Copy failed: " + e);
+  }
+}
+
 function writeToCanvas(src) {
   return new Promise((resolve, reject) => {
     img.src = src;
@@ -54,18 +70,4 @@ function writeToCanvas(src) {
       }, 'image/png');
     }
   });
-}
-
-async function copyImage(src) {
-  const image = await writeToCanvas(src);
-  try {
-    await navigator.clipboard.write([
-      new ClipboardItem({
-        [image.type]: image,
-      })
-    ]);
-    console.log("Success");
-  } catch(e) {
-    console.log("Copy failed: " + e);
-  }
 }
