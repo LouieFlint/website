@@ -28,8 +28,8 @@ async function createElements() {
 }
 
 function photoClass(gif) {
-  let name = gif.split('.gif')[0];
-  return "<div class='photo'><img src='./src/" + gif + "'/><div class='overlay' onClick='copyImage(" + name + ")'><img src='./icons/copy.png'/></div></div>"
+  //let name = gif.split('.gif')[0];
+  return "<div class='photo'><img src='./src/" + gif + "'/><div class='overlay'><img src='./icons/copy.png'/></div></div>"
 }
 
 function randomURL() {
@@ -57,6 +57,11 @@ async function copyImage(name) {
     console.log("Copy failed: " + e);
   }
 }
+
+$('#overlay').addEventListener('click', () => {
+  let src = $(this).siblings("img").src;
+  copyToClipboard(src);
+});
 
 function writeToCanvas(src) {
   return new Promise((resolve, reject) => {
