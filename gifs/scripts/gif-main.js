@@ -7,9 +7,14 @@ function initialiseDoc() {
     await randomURL();
     resolve();
   });
-  $('#overlay').addEventListener('click', () => {
-      let src = $(this).siblings("img").src;
-      copyToClipboard(src);
+  clickEvents();
+}
+
+function clickEvents() {
+  $('#copyBtn').on("click", function() {
+    let src = $(this).parent().prev().src;
+    console.log("click src: " + src);
+    //copyToClipboard(src);
   });
 }
 
@@ -33,7 +38,7 @@ async function createElements() {
 
 function photoClass(gif) {
   //let name = gif.split('.gif')[0];
-  return "<div class='photo'><img src='./src/" + gif + "'/><div class='overlay'><img src='./icons/copy.png'/></div></div>"
+  return "<div class='photo'><img src='./src/" + gif + "'/><div class='overlay'><img class'copyBtn' src='./icons/copy.png'/></div></div>"
 }
 
 function randomURL() {
