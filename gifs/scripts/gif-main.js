@@ -28,11 +28,73 @@ async function createElements() {
 }
 
 function photoClass(gif) {
-  return "<div class='photo'><img src='./" + gif + "'/><div class='overlay'><img src='./icons/copy.png'/></div></div>"
+  return "<div class='photo'><img src='./" + gif + "'/><div class='overlay' onClick='copyImage(" + gif + ")'><img src='./icons/copy.png'/></div></div>"
 }
 
 function randomURL() {
   let x = Math.floor(Math.random() * allGifs.length);
   let url = allGifs[x].download_url;
   $("#randomURL").attr("href", url);
+}
+
+
+const img = new Image();
+const canvas = document.createElement('canvas');
+const ctx = canvas.getContext('2d');
+
+function writeToCanvas(src) {
+  return new Promise((resolve, reject) => {
+    img.src = src;
+    img.onload = function() {
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      ctx.drawImage(img,0,0)
+      canvas.toBlob((blob) => {
+        res(blob);
+      }, 'image/png');
+    }
+  });
+}
+
+async function copyImage(src) {
+  const image = await writeToCanvas(src);
+  try {
+    await navigator.clipboard.write([
+      new ClipboardItem({
+        [image.type]: image,
+      })
+    ]);
+    console.log("Success");
+  } catch(e) {
+    console.log("Copy failed: " + e);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function copyImage(imageSrc) {
+  
 }
