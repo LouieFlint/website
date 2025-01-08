@@ -7,6 +7,10 @@ function initialiseDoc() {
     await randomURL();
     resolve();
   });
+  $('#overlay').addEventListener('click', () => {
+      let src = $(this).siblings("img").src;
+      copyToClipboard(src);
+  });
 }
 
 async function getGifDir() {
@@ -57,11 +61,6 @@ async function copyImage(name) {
     console.log("Copy failed: " + e);
   }
 }
-
-$('#overlay').addEventListener('click', () => {
-  let src = $(this).siblings("img").src;
-  copyToClipboard(src);
-});
 
 function writeToCanvas(src) {
   return new Promise((resolve, reject) => {
