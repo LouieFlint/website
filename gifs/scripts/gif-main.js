@@ -28,7 +28,16 @@ async function createElements() {
 }
 
 function createRandomButton() {
+  let url = randomURL();
+  $("#randomBtn").append("<div><span onClick='changRandomURL()'><a id='randomURL' href='" + url + "' target='_blank'>Random Gif</a></span></div>");
+}
+
+function randomURL() {
   let x = Math.floor(Math.random() * allGifs.length);
-  let url = allGifs[x].download_url;
-  $("#randomBtn").append("<div><span><a href='" + url + "' target='_blank'>Random Gif</a></span></div>");
+  return allGifs[x].download_url;
+}
+
+function changeRandomURL () {
+  let url = randomURL();
+  $("#randomURL").attr("href", url); 
 }
