@@ -114,11 +114,11 @@ body {
   border-radius: inherit;
   background-color: rgba(134, 121, 121, 0.8);
 }
-
+/* UNCOMMENT WHEN ONE-CLICK COPY IS FIXED
 .photo:hover .overlay {
   display: block;
 }
-
+*/
 .overlay img {
   position: absolute;
   width: 100px;
