@@ -28,9 +28,7 @@ async function createElements() {
 }
 
 function openRandomGif() {
-  var x = Math.floor(Math.random() * allGifs.length);
-  console.log(x);
-  var url = allGifs[x].download_url;
-  console.log(url);
-  window.open(url, '_blank').focus();
+  let x = Math.floor(Math.random() * allGifs.length);
+  let url = allGifs[x].download_url;
+  window.open(url, '_blank');
 }
