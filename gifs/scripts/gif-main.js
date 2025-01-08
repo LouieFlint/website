@@ -27,7 +27,7 @@ async function createElements() {
   };
 }
 
-function openRandomGif() {
+function createRandomButton() {
   let x = Math.floor(Math.random() * allGifs.length);
   let url = allGifs[x].download_url;
   $("#randomButton").append("<div><span><a href='" + url + "' target='_blank'>Random Gif</a></span></div>");
