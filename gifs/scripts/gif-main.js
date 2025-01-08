@@ -28,8 +28,9 @@ async function createElements() {
 }
 
 function photoClass(gif) {
-  //let name = gif.split('.gif')[0];
-  return "<div class='photo'><img src='./src/" + gif + "'/><div class='overlay'><img onClick='copyImage(this)' src='./icons/copy.png'/></div></div>"
+  let name = gif.split('.gif')[0];
+  console.log('name: ' + name);
+  return "<div class='photo'><img src='./src/" + gif + "'/><div class='overlay'><img onClick='copyImage('" + name + "')' src='./icons/copy.png'/></div></div>"
 }
 
 function randomURL() {
@@ -43,9 +44,9 @@ const img = new Image();
 const canvas = document.createElement('canvas');
 const ctx = canvas.getContext('2d');
 
-async function copyImage(el) {
-  let src = $(el).parent().prev().src;
-  console.log("click src: " + src);
+async function copyImage(name) {
+  let src = './src/' + name + '.gif'
+  console.log('src: ' + src);
   const image = await writeToCanvas(src);
   try {
     await navigator.clipboard.write([
