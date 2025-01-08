@@ -28,8 +28,8 @@ async function createElements() {
 }
 
 function photoClass(gif) {
-  let name = gif.
-  return "<div class='photo'><img src='./src/" + gif + "'/><div class='overlay' onClick='copyImage(" + gif + ")'><img src='./icons/copy.png'/></div></div>"
+  let name = gif.split('.gif')[0];
+  return "<div class='photo'><img src='./src/" + gif + "'/><div class='overlay' onClick='copyImage(" + name + ")'><img src='./icons/copy.png'/></div></div>"
 }
 
 function randomURL() {
@@ -44,7 +44,7 @@ const canvas = document.createElement('canvas');
 const ctx = canvas.getContext('2d');
 
 async function copyImage(name) {
-  const src = "./src/" + name;
+  const src = "./src/" + name + ".gif";
   const image = await writeToCanvas(src);
   try {
     await navigator.clipboard.write([
