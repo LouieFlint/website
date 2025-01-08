@@ -30,5 +30,5 @@ async function createElements() {
 function randomURL() {
   let x = Math.floor(Math.random() * allGifs.length);
   let url = allGifs[x].download_url;
-  $("#randomURL").attr("href", url); 
+  $("#randomURL").attr("href", url);
 }
