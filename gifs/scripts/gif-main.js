@@ -4,7 +4,7 @@ function initialiseDoc() {
   return new Promise(async(resolve, reject)=> {
     await getGifDir();
     await createElements();
-    await createRandomButton();
+    await randomURL();
     resolve();
   });
 }
@@ -27,17 +27,8 @@ async function createElements() {
   };
 }
 
-function createRandomButton() {
-  let url = randomURL();
-  $("#randomBtn").append("<div><span onClick='changRandomURL()'><a id='randomURL' href='" + url + "' target='_blank'>Random Gif</a></span></div>");
-}
-
 function randomURL() {
   let x = Math.floor(Math.random() * allGifs.length);
-  return allGifs[x].download_url;
-}
-
-function changeRandomURL () {
-  let url = randomURL();
+  let url = allGifs[x].download_url;
   $("#randomURL").attr("href", url); 
 }
