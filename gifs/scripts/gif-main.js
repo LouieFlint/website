@@ -69,32 +69,3 @@ async function copyImage(src) {
     console.log("Copy failed: " + e);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function copyImage(imageSrc) {
-  
-}
