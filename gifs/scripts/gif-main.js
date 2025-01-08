@@ -4,7 +4,7 @@ function initialiseDoc() {
   return new Promise(async(resolve, reject)=> {
     await getGifDir();
     await createElements();
-    $("#randomBtn").click(openRandomGif());
+    await createRandomButton();
     resolve();
   });
 }
@@ -30,5 +30,5 @@ async function createElements() {
 function openRandomGif() {
   let x = Math.floor(Math.random() * allGifs.length);
   let url = allGifs[x].download_url;
-  window.open(url, '_blank');
+  $("#randomButton").append(<"a href='" + url + "' target='_blank'"></a>)
 }
