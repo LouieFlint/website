@@ -68,7 +68,7 @@ function writeToCanvas(src) {
       ctx.drawImage(img,0,0)
       canvas.toBlob((blob) => {
         resolve(blob);
-      }, 'image/png');
+      }, 'image/gif');
     }
   });
 }
