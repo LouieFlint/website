@@ -20,11 +20,15 @@ async function createElements() {
       var gif1 = allGifs[i].path.split('gifs/')[1];
       var gif2 = allGifs[i+1].path.split('gifs/')[1];
       var gif3 = allGifs[i+2].path.split('gifs/')[1];
-      $("#col1").append("<div class='photo'><img src='./" + gif1 + "'/><div class='overlay'></div></div>");
-      $("#col2").append("<div class='photo'><img src='./" + gif2 + "'/><div class='overlay'></div></div>");
-      $("#col3").append("<div class='photo'><img src='./" + gif3 + "'/><div class='overlay'></div></div>");
+      $("#col1").append(photoClass(gif1));
+      $("#col2").append(photoClass(gif2));
+      $("#col3").append(photoClass(gif3));
       i = i + 3;
   };
+}
+
+function photoClass(gif) {
+  return "<div class='photo'><img src='./" + gif + "'/><div class='overlay'></div></div>"
 }
 
 function randomURL() {
