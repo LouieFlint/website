@@ -28,7 +28,7 @@ async function createElements() {
 }
 
 function photoClass(gif) {
-  return "<div class='photo'><img src='./" + gif + "'/><div class='overlay'></div></div>"
+  return "<div class='photo'><img src='./" + gif + "'/><div class='overlay'><img src='./icons/copy.png'/></div></div>"
 }
 
 function randomURL() {
