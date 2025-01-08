@@ -37,6 +37,7 @@ function randomURL() {
   $("#randomURL").attr("href", url);
 }
 
+/*TODO: FIX ONE-CLICK COPY FOR GIFS*/
 
 const img = new Image();
 const canvas = document.createElement('canvas');
