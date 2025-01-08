@@ -20,17 +20,15 @@ async function createElements() {
       var gif1 = allGifs[i].name;
       var gif2 = allGifs[i+1].name;
       var gif3 = allGifs[i+2].name;
-      $("#col1").append(photoClass(gif1));
-      $("#col2").append(photoClass(gif2));
-      $("#col3").append(photoClass(gif3));
+      $("#col1").append(photoClass(gif1, i));
+      $("#col2").append(photoClass(gif2, i+1));
+      $("#col3").append(photoClass(gif3, i+2));
       i = i + 3;
   };
 }
 
-function photoClass(gif) {
-  let name = gif.split('.gif')[0];
-  console.log('name: ' + name);
-  return "<div class='photo'><img src='./src/" + gif + "'/><div class='overlay'><img onClick='copyImage('" + name + "')' src='./icons/copy.png'/></div></div>"
+function photoClass(gif, i) {
+  return "<div class='photo'><img src='./src/" + gif + "'/><div class='overlay'><img onClick='copyImage(" + i + ")' src='./icons/copy.png'/></div></div>"
 }
 
 function randomURL() {
@@ -44,8 +42,8 @@ const img = new Image();
 const canvas = document.createElement('canvas');
 const ctx = canvas.getContext('2d');
 
-async function copyImage(name) {
-  let src = './src/' + name + '.gif'
+async function copyImage(i) {
+  let src = './' + allGifs[i].path.split('gifs/')[1];
   console.log('src: ' + src);
   const image = await writeToCanvas(src);
   try {
