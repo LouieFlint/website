@@ -33,5 +33,5 @@ async function createElements() {
 function openRandomGif() {
   let x = Math.random() * allGifs.length;
   let url = allGifs[x].download_url;
-  window.open(url, '_blank').focus();
+  window.open(url, '_blank');
 }
