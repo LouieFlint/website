@@ -43,8 +43,8 @@ const img = new Image();
 const canvas = document.createElement('canvas');
 const ctx = canvas.getContext('2d');
 
-async function copyImage(this) {
-  let src = $(this).parent().prev().src;
+async function copyImage(el) {
+  let src = $(el).parent().prev().src;
   console.log("click src: " + src);
   const src = "./src/" + name + ".gif";
   const image = await writeToCanvas(src);
