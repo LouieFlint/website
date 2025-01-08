@@ -66,7 +66,7 @@ function writeToCanvas(src) {
       canvas.height = img.naturalHeight;
       ctx.drawImage(img,0,0)
       canvas.toBlob((blob) => {
-        res(blob);
+        resolve(blob);
       }, 'image/png');
     }
   });
