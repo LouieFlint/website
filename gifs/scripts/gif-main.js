@@ -7,15 +7,6 @@ function initialiseDoc() {
     await randomURL();
     resolve();
   });
-  clickEvents();
-}
-
-function clickEvents() {
-  $('#copyBtn').on("click", function() {
-    let src = $(this).parent().prev().src;
-    console.log("click src: " + src);
-    //copyToClipboard(src);
-  });
 }
 
 async function getGifDir() {
@@ -38,7 +29,7 @@ async function createElements() {
 
 function photoClass(gif) {
   //let name = gif.split('.gif')[0];
-  return "<div class='photo'><img src='./src/" + gif + "'/><div class='overlay'><img class'copyBtn' src='./icons/copy.png'/></div></div>"
+  return "<div class='photo'><img src='./src/" + gif + "'/><div class='overlay'><img onClick='copyImage(this)' src='./icons/copy.png'/></div></div>"
 }
 
 function randomURL() {
@@ -52,7 +43,9 @@ const img = new Image();
 const canvas = document.createElement('canvas');
 const ctx = canvas.getContext('2d');
 
-async function copyImage(name) {
+async function copyImage(this) {
+  let src = $(this).parent().prev().src;
+  console.log("click src: " + src);
   const src = "./src/" + name + ".gif";
   const image = await writeToCanvas(src);
   try {
